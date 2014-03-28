@@ -1,0 +1,42 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+  
+zh-CN:
+  
+  #Supplierx
+  Successfully Saved! : '已保存！'
+  Successfully Updated! : '已更新！'
+  Data Error. Not Saved! : '数据错误。 无法保存！'
+  Data Error. Not Updated! : '数据错误。无法更新！'
+  Manufacturers  : '制造商一览'
+  New Manufacturer  : '新制造商'
+  Update Manufacturer : '更新制造商信息'
+  Manufacturer Info : '制造商信息'
+  'Name:'  : '制造商名称：'
+  Manufacturer Name : '制造商名称'
+  'Short Name:' : '简称：'
+  Short Name  : '简称'
+  'Contact Info:'  : '联系信息：'
+  Contact Info  : '联系信息'
+  'Contact Name:'  : '联系人：'
+  Contact  : '联系人'
+  'Cell Phone:' : '手机：'
+  Cell  : '手机'
+  Cell Phone : '手机'
+  'Phone:'  : '电话：'
+  Phone  : '电话'
+  'Fax:'  : '传真：'
+  Fax  : '传真'
+  'Address:'  : '地址：'
+  Address  : '地址'
+  'Main Product：' : '产品：'
+  Main Product : '产品'
+  'Quality System:' : '质量体系：'
+  Quality System : '质量体系'
+  Last Updated By         : '更改'  
+  Yes : '是'
+  No  : '否'
+  yes : '是'
+  no  : '否'
+  Must be unique! : '重名！'
+

@@ -1,0 +1,62 @@
+<% if @view_in_config && @erb_code %>
+  <%= render inline: ERB.new(@erb_code).result(binding) %>
+  
+<% else %>
+<div id="main_body">
+
+<h1><%=t('Manufacturer Info') %></h1>
+
+<p>
+  <b><%=t('Name')%></b>
+  <%= @manufacturer.name %>
+</p>
+<p>
+  <b><%=t('Short Name') %></b>
+  <%= @manufacturer.short_name %>
+</p>
+<p>
+  <b><%=t('Contact Info') %></b>
+  <%= @manufacturer.contact_info %>
+</p>
+<p>
+  <b><%=t('Cell Phone') %></b>
+  <%= @manufacturer.cell %>
+</p>
+<p>
+  <b><%=t('Phone') %></b>
+  <%= @manufacturer.phone %>
+</p>
+<p>
+  <b><%=t('Fax') %></b>
+  <%= @manufacturer.fax %>
+</p>
+<p>
+  <b><%=t('Address') %></b>
+  <%= @manufacturer.address %>
+</p>
+<p>
+  <b><%=t('Main Product') %></b>
+  <%= @manufacturer.main_product %>
+</p>
+<p>
+  <b><%=t('Quality System') %></b>
+  <%= @manufacturer.quality_system if @manufacturer.quality_system_id.present? %>
+</p>
+<p>
+  <b><%= t('Active') %></b>
+  <%= @manufacturer.active ? t('Yes') : t('No') %>
+</p>
+<p>
+  <b><%= t('Last Updated By') %></b>
+  <%= @manufacturer.last_updated_by.name %>
+</p>
+   <table class="table table-striped">
+	  <tr>
+	    <th>
+          <%= link_to t('Back'), SUBURI + "/view_handler?index=0", :id => 'close', :class => BUTTONS_CLS['action'] %>
+   		</th>
+	  </tr>
+	</table> 
+</div>
+
+<% end %>

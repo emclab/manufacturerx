@@ -1,0 +1,29 @@
+<% if @view_in_config && @erb_code %>
+  <%= render inline: @erb_code %>
+  
+<% else %>
+<%= simple_form_for @manufacturer do |f| %>    
+ 
+  <%= f.input :name, :label => t('Supplier Name') %>  
+  <%= f.input :short_name, :label => t('Short Name'), :placeholder => '4-8字' %>
+  <%= f.input :contact_info, :label => t('Contact Info'), :input_html => {:rows => 4} %> 
+  <%= f.input :cell, :label => t('Cell Phone') %>   
+  <%= f.input :phone, :label => t('Phone') %> 
+  <%= f.input :fax, :label => t('Fax') %> 
+  <%= f.input :address, :label => t('Address'), :input_html => {:rows => 2} %>
+  <%= f.input :main_product, :label => t('Main Product：'), :input_html => { :rows => 2} %>   
+  <%= f.input :quality_system_id, :collection => Commonx::CommonxHelper.return_misc_definitions('quality_system'), :label => t('Quality System'),
+                                 :label_method => :name, :value_method => :id %>           
+  <% if readonly?(@manufacturer, 'active')%>
+     <%= f.input :active_noupdate, :label => t('Active'), :readonly => true, :required => false, :input_html => {:value => @manufacturer.active} %>
+  <% else %>
+     <%= f.input :active, :label => t('Active'), :collection => [[t('Yes'), true], [t('No'), false]]%>
+  <% end %>      
+  
+  <%= link_to t('Back'), SUBURI + "/authentify/view_handler?index=0", :class => BUTTONS_CLS['action'] %>
+  <%= f.button :submit, t('Save') , :class => BUTTONS_CLS['action'] %>  
+<% end %> 
+
+<% end %> 
+
+
