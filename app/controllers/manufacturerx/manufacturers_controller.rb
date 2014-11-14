@@ -52,5 +52,10 @@ module Manufacturerx
       @erb_code = find_config_const('manufacturer_show_view', 'manufacturerx')
     end
     
+    def autocomplete
+      @parts = Manufacturerx::Manufacturer.where("active = ?", true).order(:name).where("name like ?", "%#{params[:term]}%")
+      render json: @parts.map(&:name)    
+    end  
+    
   end
 end

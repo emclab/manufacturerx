@@ -6,7 +6,10 @@ module Manufacturerx
     attr_accessible :active, :address, :cell, :contact_info, :fax, :last_updated_by_id, :main_product, :name, :phone, :quality_system_id, :short_name,
                     :active_noupdate,
                     :as => :role_update
-    
+    attr_accessor :start_date_s, :end_date_s, :name_keyword_s, :contact_info_s, :quality_system_id_s, :active_s
+    attr_accessible :start_date_s, :end_date_s, :name_keyword_s, :contact_info_s, :quality_system_id_s, :active_s,     
+                    :as => :role_search_stats
+                    
     belongs_to :last_updated_by, :class_name => 'Authentify::User'
     belongs_to :quality_system, :class_name => 'Commonx::MiscDefinition'
       
