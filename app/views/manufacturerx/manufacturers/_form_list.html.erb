@@ -42,7 +42,8 @@
 	  <tr>
 	    <th>
   		  <%= link_to t('Back'), SUBURI + "/view_handler?index=0", :class => BUTTONS_CLS['action'] %>
-  		 &nbsp;<%= link_to t('New Manufacturer'), SUBURI + "/view_handler?index=1&url=#{new_manufacturer_path}", :class => BUTTONS_CLS['action'] if has_action_right?('create', params[:controller]) %>
+  		 &nbsp;&nbsp;&nbsp;&nbsp;
+  		  <%= link_to t('New Manufacturer'), SUBURI + "/view_handler?index=1&url=#{new_manufacturer_path}", :class => BUTTONS_CLS['action'] if has_action_right?('create', params[:controller]) %>
         </th>
 	  </tr>
 	</table> 

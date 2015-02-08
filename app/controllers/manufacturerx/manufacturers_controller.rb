@@ -53,8 +53,8 @@ module Manufacturerx
     end
     
     def autocomplete
-      @parts = Manufacturerx::Manufacturer.where("active = ?", true).order(:name).where("name like ?", "%#{params[:term]}%")
-      render json: @parts.map(&:name)    
+      manufacturers = Manufacturerx::Manufacturer.where("active = ?", true).order(:name).where("name like ?", "%#{params[:term]}%")
+      render json: manufacturers.map(&:name)    
     end  
     
   end

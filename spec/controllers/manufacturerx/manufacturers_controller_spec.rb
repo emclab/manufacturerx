@@ -28,7 +28,7 @@ module Manufacturerx
         :sql_code => "Manufacturerx::Manufacturer.where(:active => true).order('id')")
         session[:user_id] = @u.id
         session[:user_privilege] = Authentify::UserPrivilegeHelper::UserPrivilege.new(@u.id)
-        sup = FactoryGirl.create(:manufacturerx_manufacturer)
+        sup = FactoryGirl.create(:manufacturerx_manufacturer, :quality_system_id => @qs.id)
         get 'index', {:use_route => :manufacturerx}
         assigns(:manufacturers).should =~ [sup]
       end
