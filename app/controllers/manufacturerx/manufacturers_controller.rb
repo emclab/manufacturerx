@@ -2,7 +2,7 @@ require_dependency "manufacturerx/application_controller"
 
 module Manufacturerx
   class ManufacturersController < ApplicationController
-    before_filter :require_employee
+    before_action :require_employee
     
     def index
       @title = t('Manufacturers')

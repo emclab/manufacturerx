@@ -1,9 +1,9 @@
 module Manufacturerx
   class Manufacturer < ActiveRecord::Base
-    attr_accessor :active_noupdate
-    attr_accessible :active, :address, :cell, :contact_info, :fax, :last_updated_by_id, :main_product, :name, :phone, :quality_system_id, :short_name,
+    attr_accessor :active_noupdate, :quality_system_name
+    attr_accessible :active, :address, :cell, :contact_info, :fax, :last_updated_by_id, :main_product, :name, :phone, :quality_system_id, :short_name, 
                     :as => :role_new  
-    attr_accessible :active, :address, :cell, :contact_info, :fax, :last_updated_by_id, :main_product, :name, :phone, :quality_system_id, :short_name,
+    attr_accessible :active, :address, :cell, :contact_info, :fax, :last_updated_by_id, :main_product, :name, :phone, :quality_system_id, :short_name, :quality_system_name,
                     :active_noupdate,
                     :as => :role_update
     attr_accessor :start_date_s, :end_date_s, :name_keyword_s, :contact_info_s, :quality_system_id_s, :active_s

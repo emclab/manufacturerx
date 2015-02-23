@@ -34,7 +34,7 @@
     <td><%= r.address %></td>
     <td><%= r.quality_system.name if r.quality_system_id.present? %></td> 
     <td><%= r.last_updated_by.name  %></td> 
-    <td><%= link_to 'Edit', SUBURI + "/view_handler?index=1&url=#{edit_manufacturer_path(r)}", :class => BUTTONS_CLS['action'] if has_action_right?('update', params[:controller], r) %></td>
+    <td><%= link_to t('Edit'), SUBURI + "/view_handler?index=1&url=#{edit_manufacturer_path(r)}", :class => BUTTONS_CLS['action'] if has_action_right?('update', params[:controller], r) %></td>
 
   </tr>
 <% end %>
