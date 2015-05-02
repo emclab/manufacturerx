@@ -1,6 +1,7 @@
 module Manufacturerx
   class Manufacturer < ActiveRecord::Base
     attr_accessor :active_noupdate, :quality_system_name
+=begin
     attr_accessible :active, :address, :cell, :contact_info, :fax, :last_updated_by_id, :main_product, :name, :phone, :quality_system_id, :short_name, 
                     :as => :role_new  
     attr_accessible :active, :address, :cell, :contact_info, :fax, :last_updated_by_id, :main_product, :name, :phone, :quality_system_id, :short_name, :quality_system_name,
@@ -9,7 +10,7 @@ module Manufacturerx
     attr_accessor :start_date_s, :end_date_s, :name_keyword_s, :contact_info_s, :quality_system_id_s, :active_s
     attr_accessible :start_date_s, :end_date_s, :name_keyword_s, :contact_info_s, :quality_system_id_s, :active_s,     
                     :as => :role_search_stats
-                    
+=end              
     belongs_to :last_updated_by, :class_name => 'Authentify::User'
     belongs_to :quality_system, :class_name => 'Commonx::MiscDefinition'
       

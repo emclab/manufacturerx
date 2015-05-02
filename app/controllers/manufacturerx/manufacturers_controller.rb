@@ -17,7 +17,7 @@ module Manufacturerx
     end
   
     def create
-      @manufacturer = Manufacturerx::Manufacturer.new(params[:manufacturer], :as => :role_new)
+      @manufacturer = Manufacturerx::Manufacturer.new(new_params)
       @manufacturer.last_updated_by_id = session[:user_id]
       if @manufacturer.save
         redirect_to URI.escape(SUBURI + "/authentify/view_handler?index=0&msg=Successfully Saved!")
@@ -37,7 +37,7 @@ module Manufacturerx
     def update
       @manufacturer = Manufacturerx::Manufacturer.find_by_id(params[:id])
       @manufacturer.last_updated_by_id = session[:user_id]
-      if @manufacturer.update_attributes(params[:manufacturer], :as => :role_update)
+      if @manufacturer.update_attributes(edit_params)
         redirect_to URI.escape(SUBURI + "/authentify/view_handler?index=0&msg=Successfully Updated!")
       else
         @erb_code = find_config_const('manufacturer_edit_view', 'manufacturerx')
@@ -57,5 +57,14 @@ module Manufacturerx
       render json: manufacturers.map(&:name)    
     end  
     
+    private
+    
+    def new_params
+      params.require(:manufacturer).permit(:active, :address, :cell, :contact_info, :fax, :main_product, :name, :phone, :quality_system_id, :short_name)
+    end
+    
+    def edit_params
+      params.require(:manufacturer).permit(:active, :address, :cell, :contact_info, :fax, :main_product, :name, :phone, :quality_system_id, :short_name)
+    end
   end
 end
