@@ -2,7 +2,6 @@
 <%= render inline: ERB.new(@erb_code).result(binding) %>
 <% else %>
 
-<div id="main_body">
 <h1><%=t('Manufacturers')%></h1>
 <div class="byop_pagination"><%= will_paginate models %></div>
 <table class="table table-striped">
@@ -47,6 +46,5 @@
         </th>
 	  </tr>
 	</table> 
-</div>
 
 <% end %>
