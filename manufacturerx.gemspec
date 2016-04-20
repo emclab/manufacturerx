@@ -7,11 +7,11 @@ require "manufacturerx/version"
 Gem::Specification.new do |s|
   s.name        = "manufacturerx"
   s.version     = Manufacturerx::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Manufacturerx."
-  s.description = "TODO: Description of Manufacturerx."
+  s.authors     = ["Your name"]
+  s.email       = ["Your@email.com"]
+  s.homepage    = "http://home.com"
+  s.summary     = "Summary of Manufacturerx."
+  s.description = "Description of Manufacturerx."
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency "will_paginate"
   s.add_dependency "database_cleaner"
   s.add_dependency "execjs"
-  #s.add_dependency 'protected_attributes'
   s.add_dependency "sass-rails", '~>5.0.1'
   s.add_dependency "coffee-rails", '~>4.1.0'   
   s.add_dependency "uglifier", '>=2.7.0'
